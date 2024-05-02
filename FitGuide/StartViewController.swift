@@ -33,7 +33,7 @@ final class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .cyan
+        view.backgroundColor = .white
         setupUI()
         
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
