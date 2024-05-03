@@ -81,6 +81,7 @@ final class AuthorizationViewController: UIViewController {
         button.setTitle("To find an optimal training program", for: .normal)
         button.backgroundColor = .blue
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(trainProgramButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -90,6 +91,12 @@ final class AuthorizationViewController: UIViewController {
         view.backgroundColor = .white
 
         setupUI()
+    }
+    
+    // MARK: - Methods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     // MARK: - Private Methods
@@ -107,7 +114,7 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @objc private func calculateBMIButtonTapped() {
-        if nameTextField.text == "" || weightTextField.text == "" || heightTextField.text == "" {
+        if !isCorrectData() {
             showAlert(message: "Введите корректные данные пользователя")
         } else {
             bodyMassIndexLabel.text = """
@@ -123,6 +130,14 @@ final class AuthorizationViewController: UIViewController {
         }
         
         view.endEditing(true)
+    }
+    
+    @objc private func trainProgramButtonTapped() {
+        if isCorrectData() {
+            navigationController?.pushViewController(ProgramViewController(), animated: true)
+        } else {
+            showAlert(message: "Введите корректные данные пользователя")
+        }
     }
     
     private func setupConstraints() {
@@ -172,11 +187,11 @@ final class AuthorizationViewController: UIViewController {
     
     private func getBodyMassIndex() -> (Double, String) {
         var conclusion = ""
-        let heigh = Double(heightTextField.text ?? "1") ?? 1
+        let height = Double(heightTextField.text ?? "1") ?? 1
         let weight = Double(weightTextField.text ?? "0") ?? 0
         
         
-        let bodyMassIndex = weight / (heigh * heigh / 10000)
+        let bodyMassIndex = weight / (height * height / 10000)
         let roundedIndex = round(bodyMassIndex * 10)/10
         
         switch bodyMassIndex {
@@ -203,5 +218,16 @@ final class AuthorizationViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    private func isCorrectData() -> Bool {
+        let height = Double(heightTextField.text ?? "1") ?? 1
+        let weight = Double(weightTextField.text ?? "0") ?? 0
+        
+        if nameTextField.text != "" && (100...250).contains(height) && (20...200).contains(weight) {
+            return true
+        } else {
+            return false
+        }
     }
 }

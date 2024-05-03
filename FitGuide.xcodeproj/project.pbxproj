@@ -14,6 +14,7 @@
 		D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C95962BE3C03100739878 /* AboutAppViewController.swift */; };
 		D3A1783A2BE3C4CC008FCD9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3A178392BE3C4CC008FCD9C /* SnapKit */; };
 		D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */; };
+		D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D37C95912BD1AB8400739878 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D37C95962BE3C03100739878 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				D37C95912BD1AB8400739878 /* StartViewController.swift */,
 				D37C95962BE3C03100739878 /* AboutAppViewController.swift */,
 				D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */,
+				D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */,
 				D37C95862BD0118200739878 /* Assets.xcassets */,
 				D37C95882BD0118200739878 /* LaunchScreen.storyboard */,
 				D37C958B2BD0118200739878 /* Info.plist */,
@@ -147,6 +150,7 @@
 			files = (
 				D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */,
 				D37C95922BD1AB8400739878 /* StartViewController.swift in Sources */,
+				D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */,
 				D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */,
 				D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */,
 			);
