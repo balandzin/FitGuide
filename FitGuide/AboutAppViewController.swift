@@ -40,14 +40,7 @@ final class AboutAppViewController: UIViewController {
         
         setupUI()
         setupText()
-        
-        let attributedString = NSMutableAttributedString(string: "Нажмите, чтобы связаться с разработчиком в Telegram")
-        let linkRange = attributedString.mutableString.range(of: "Telegram")
-        attributedString.addAttribute(.link, value: telegramLink, range: linkRange)
-        telegramLabel.attributedText = attributedString
-                
-        telegramLabel.isUserInteractionEnabled = true
-        telegramLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openTelegramLink)))
+        setupLinkAttributesForTelegram()
     }
     
     // MARK: - Private Methods
@@ -107,8 +100,18 @@ final class AboutAppViewController: UIViewController {
             """
     }
     
+    private func setupLinkAttributesForTelegram() {
+        let attributedString = NSMutableAttributedString(string: "Нажмите, чтобы связаться с разработчиком в Telegram")
+        let linkRange = attributedString.mutableString.range(of: "Telegram")
+        attributedString.addAttribute(.link, value: telegramLink, range: linkRange)
+        telegramLabel.attributedText = attributedString
+                
+        telegramLabel.isUserInteractionEnabled = true
+        telegramLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openTelegramLink)))
+    }
+    
     @objc func openTelegramLink() {
-            if let url = URL(string: "https://t.me/yourtelegramusername") {
+            if let url = URL(string: telegramLink) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
