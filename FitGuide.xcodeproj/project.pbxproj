@@ -16,6 +16,7 @@
 		D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */; };
 		D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */; };
 		D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783F2BE5175A008FCD9C /* AppDescription.swift */; };
+		D3A178422BE51D26008FCD9C /* MyJSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178412BE51D26008FCD9C /* MyJSONData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
 		D3A1783F2BE5175A008FCD9C /* AppDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescription.swift; sourceTree = "<group>"; };
+		D3A178412BE51D26008FCD9C /* MyJSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJSONData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */,
 				D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */,
 				D3A1783F2BE5175A008FCD9C /* AppDescription.swift */,
+				D3A178412BE51D26008FCD9C /* MyJSONData.swift */,
 				D37C95862BD0118200739878 /* Assets.xcassets */,
 				D37C95882BD0118200739878 /* LaunchScreen.storyboard */,
 				D37C958B2BD0118200739878 /* Info.plist */,
@@ -156,6 +159,7 @@
 				D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */,
 				D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */,
 				D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */,
+				D3A178422BE51D26008FCD9C /* MyJSONData.swift in Sources */,
 				D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
