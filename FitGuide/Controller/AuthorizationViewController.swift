@@ -8,10 +8,10 @@
 import UIKit
 
 final class AuthorizationViewController: UIViewController {
-
+    
     // MARK: - GUI Variables
     let genderSegmentedControl = CustomSegmentedControl(items: ["Male", "Female"])
-            
+    
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.layer.cornerRadius = 10
@@ -29,11 +29,11 @@ final class AuthorizationViewController: UIViewController {
         return textField
     }()
     
-//    private lazy var genderSegmentedControl: UISegmentedControl = {
-//        let segmentedControl = UISegmentedControl(items: ["Male", "Female"])
-//        segmentedControl.selectedSegmentIndex = 0
-//        return segmentedControl
-//    }()
+    //    private lazy var genderSegmentedControl: UISegmentedControl = {
+    //        let segmentedControl = UISegmentedControl(items: ["Male", "Female"])
+    //        segmentedControl.selectedSegmentIndex = 0
+    //        return segmentedControl
+    //    }()
     
     private lazy var weightTextField: UITextField = {
         let textField = UITextField()
@@ -148,6 +148,7 @@ final class AuthorizationViewController: UIViewController {
     @objc private func calculateBMIButtonTapped() {
         if !isCorrectData() {
             showAlert(message: "Введите корректные данные пользователя")
+            
         } else {
             bodyMassIndexLabel.text = """
             \(nameTextField.text ?? ""),  ваш индекс массы тела:
@@ -213,7 +214,7 @@ final class AuthorizationViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
-
+            
         }
     }
     

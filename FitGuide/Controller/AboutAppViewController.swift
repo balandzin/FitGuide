@@ -21,7 +21,7 @@ final class AboutAppViewController: UIViewController {
     private lazy var contentView = UIView()
     
     private lazy var descriptionLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.numberOfLines = 0
         return label
     }()
@@ -32,12 +32,12 @@ final class AboutAppViewController: UIViewController {
         return label
     }()
     
-
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer()
-
+        
         title = "О приложении"
         setupUI()
         setupText()
@@ -76,9 +76,9 @@ final class AboutAppViewController: UIViewController {
         let description = AppDescription().description
         
         let attributedString = NSAttributedString(string: description,
-        attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18),
-        NSAttributedString.Key.foregroundColor: UIColor.black,
-        NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
+                                                  attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18),
+                                                               NSAttributedString.Key.foregroundColor: UIColor.black,
+                                                               NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         
         descriptionLabel.attributedText = attributedString
     }
@@ -88,14 +88,14 @@ final class AboutAppViewController: UIViewController {
         let linkRange = attributedString.mutableString.range(of: "Telegram")
         attributedString.addAttribute(.link, value: telegramLink, range: linkRange)
         telegramLabel.attributedText = attributedString
-                
+        
         telegramLabel.isUserInteractionEnabled = true
         telegramLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openTelegramLink)))
     }
     
     @objc func openTelegramLink() {
-            if let url = URL(string: telegramLink) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+        if let url = URL(string: telegramLink) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+    }
 }

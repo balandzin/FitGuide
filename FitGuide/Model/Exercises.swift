@@ -8,7 +8,7 @@
 import Foundation
 
 struct Exercises {
-        
+    
     let day: String
     let exercises1: String
     let exercises2: String
@@ -41,7 +41,7 @@ struct Exercises {
             exercises4: exercisesData.bicepsFirstExercise.randomElement() ?? "",
             exercises5: exercisesData.bicepsSecondExercise.randomElement() ?? "",
             exercises6: exercisesData.hitch.randomElement() ?? ""
-
+            
         )
         
         let day3 = Exercises(
@@ -52,7 +52,7 @@ struct Exercises {
             exercises4: exercisesData.shouldersFirstExercise.randomElement() ?? "",
             exercises5: exercisesData.shouldersSecondExercise.randomElement() ?? "",
             exercises6: exercisesData.hitch.randomElement() ?? ""
-
+            
         )
         
         exercises.append(day1)

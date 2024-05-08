@@ -122,5 +122,4 @@ final class StartViewController: UIViewController {
             make.height.equalTo(200)
         }
     }
-    
 }

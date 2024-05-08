@@ -25,7 +25,7 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "exercise")
     }
-
+    
 }
 
 // MARK: - UITableView
