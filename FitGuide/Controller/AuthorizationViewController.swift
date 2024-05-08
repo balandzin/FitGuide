@@ -10,6 +10,8 @@ import UIKit
 final class AuthorizationViewController: UIViewController {
 
     // MARK: - GUI Variables
+    let genderSegmentedControl = CustomSegmentedControl(items: ["Male", "Female"])
+            
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.layer.cornerRadius = 10
@@ -17,14 +19,21 @@ final class AuthorizationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.autocapitalizationType = .words
         textField.borderStyle = .roundedRect
+        
+        // Тени
+        textField.layer.shadowColor = UIColor.black.cgColor
+        textField.layer.shadowOffset = CGSize(width: 0, height: 4)
+        textField.layer.shadowOpacity = 0.5
+        textField.layer.shadowRadius = 4
+        
         return textField
     }()
     
-    private lazy var genderSegmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["Male", "Female"])
-        segmentedControl.selectedSegmentIndex = 0
-        return segmentedControl
-    }()
+//    private lazy var genderSegmentedControl: UISegmentedControl = {
+//        let segmentedControl = UISegmentedControl(items: ["Male", "Female"])
+//        segmentedControl.selectedSegmentIndex = 0
+//        return segmentedControl
+//    }()
     
     private lazy var weightTextField: UITextField = {
         let textField = UITextField()
@@ -33,6 +42,14 @@ final class AuthorizationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.keyboardType = .numberPad
         textField.borderStyle = .roundedRect
+        
+        // Тени
+        textField.layer.shadowColor = UIColor.black.cgColor
+        textField.layer.shadowOffset = CGSize(width: 0, height: 4)
+        textField.layer.shadowOpacity = 0.5
+        textField.layer.shadowRadius = 4
+        
+        
         return textField
     }()
     
@@ -43,6 +60,13 @@ final class AuthorizationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.keyboardType = .numberPad
         textField.borderStyle = .roundedRect
+        
+        // Тени
+        textField.layer.shadowColor = UIColor.black.cgColor
+        textField.layer.shadowOffset = CGSize(width: 0, height: 4)
+        textField.layer.shadowOpacity = 0.5
+        textField.layer.shadowRadius = 4
+        
         return textField
     }()
     
@@ -59,15 +83,6 @@ final class AuthorizationViewController: UIViewController {
         button.layer.shadowOpacity = 0.5
         button.layer.shadowRadius = 4
         button.addTarget(self, action: #selector(calculateBMIButtonTapped), for: .touchUpInside)
-        
-//        // Добавляем границу кнопки
-//        button.layer.borderWidth = 2
-//        button.layer.borderColor = UIColor.darkGray.cgColor
-//
-//        // Добавляем тень кнопке
-//        button.layer.shadowColor = UIColor.black.cgColor
-//        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-//        button.tintColor = .black
         return button
     }()
     
@@ -103,8 +118,9 @@ final class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer()
-
         setupUI()
+        
+        genderSegmentedControl.selectedSegmentIndex = 0
     }
     
     // MARK: - Methods
@@ -123,6 +139,8 @@ final class AuthorizationViewController: UIViewController {
         view.addSubview(bodyMassIndexLabel)
         view.addSubview(idealBodyMassIndexLabel)
         view.addSubview(trainProgramButton)
+        
+        view.addSubview(genderSegmentedControl)
         
         setupConstraints()
     }

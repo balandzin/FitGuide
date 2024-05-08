@@ -21,6 +21,7 @@
 		D3A178532BEB91A2008FCD9C /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178522BEB91A2008FCD9C /* Exercises.swift */; };
 		D3A178592BEB9D35008FCD9C /* UIView + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178582BEB9D35008FCD9C /* UIView + Ex.swift */; };
 		D3A1785D2BEC2350008FCD9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A1785C2BEC2350008FCD9C /* Assets.xcassets */; };
+		D3A178622BEC2BA8008FCD9C /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178612BEC2BA8008FCD9C /* CustomSegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D3A178522BEB91A2008FCD9C /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
 		D3A178582BEB9D35008FCD9C /* UIView + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ex.swift"; sourceTree = "<group>"; };
 		D3A1785C2BEC2350008FCD9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		D3A178612BEC2BA8008FCD9C /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +74,8 @@
 		D37C957C2BD0118000739878 /* FitGuide */ = {
 			isa = PBXGroup;
 			children = (
-				D37C95912BD1AB8400739878 /* StartViewController.swift */,
-				D37C95962BE3C03100739878 /* AboutAppViewController.swift */,
-				D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */,
-				D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */,
+				D3A1785F2BEC2B44008FCD9C /* View */,
+				D3A178602BEC2B6F008FCD9C /* Controller */,
 				D3A1783F2BE5175A008FCD9C /* AppDescription.swift */,
 				D3A178492BEB8ECE008FCD9C /* Extensions */,
 				D3A1784D2BEB8F54008FCD9C /* Resources */,
@@ -120,6 +120,25 @@
 				D37C958B2BD0118200739878 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D3A1785F2BEC2B44008FCD9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3A178612BEC2BA8008FCD9C /* CustomSegmentedControl.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3A178602BEC2B6F008FCD9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D37C95912BD1AB8400739878 /* StartViewController.swift */,
+				D37C95962BE3C03100739878 /* AboutAppViewController.swift */,
+				D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */,
+				D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +225,7 @@
 				D3A178512BEB9180008FCD9C /* ExercisesData.swift in Sources */,
 				D3A178592BEB9D35008FCD9C /* UIView + Ex.swift in Sources */,
 				D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */,
+				D3A178622BEC2BA8008FCD9C /* CustomSegmentedControl.swift in Sources */,
 				D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */,
 				D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */,
 				D3A1784B2BEB8EEF008FCD9C /* Bundle + Ex.swift in Sources */,
