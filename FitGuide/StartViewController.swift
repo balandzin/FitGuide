@@ -56,7 +56,7 @@ final class StartViewController: UIViewController {
         if rotateAnimation == nil {
             let animation = CABasicAnimation(keyPath: "transform.rotation")
             animation.toValue = CGFloat.pi * 2.0
-            animation.duration = 2.0
+            animation.duration = 3.0
             animation.repeatCount = .infinity
             
             dumbbellImageView.layer.add(animation, forKey: "rotationAnimation")
@@ -68,7 +68,7 @@ final class StartViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         // Остановка анимации вращения гантели
-        if let animation = rotateAnimation {
+        if rotateAnimation != nil {
             dumbbellImageView.layer.removeAnimation(forKey: "rotationAnimation")
             rotateAnimation = nil
         }
@@ -108,9 +108,9 @@ final class StartViewController: UIViewController {
         
         dumbbellImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(100)
-            make.width.equalTo(150)
-            make.height.equalTo(150)
+            make.top.equalToSuperview().inset(150)
+            make.width.equalTo(200)
+            make.height.equalTo(200)
         }
     }
     
