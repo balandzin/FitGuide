@@ -38,6 +38,7 @@ final class AboutAppViewController: UIViewController {
         super.viewDidLoad()
         view.addVerticalGradientLayer()
 
+        title = "О приложении"
         setupUI()
         setupText()
         setupLinkAttributesForTelegram()
