@@ -72,8 +72,14 @@ final class AboutAppViewController: UIViewController {
     }
     
     private func setupText() {
-        let description = AppDescription.shared.description
-        descriptionLabel.text = description
+        let description = AppDescription().description
+        
+        let attributedString = NSAttributedString(string: description,
+        attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18),
+        NSAttributedString.Key.foregroundColor: UIColor.black,
+        NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
+        
+        descriptionLabel.attributedText = attributedString
     }
     
     private func setupLinkAttributesForTelegram() {

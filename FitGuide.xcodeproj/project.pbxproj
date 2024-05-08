@@ -20,6 +20,7 @@
 		D3A1784B2BEB8EEF008FCD9C /* Bundle + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */; };
 		D3A178512BEB9180008FCD9C /* ExercisesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178502BEB9180008FCD9C /* ExercisesData.swift */; };
 		D3A178532BEB91A2008FCD9C /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178522BEB91A2008FCD9C /* Exercises.swift */; };
+		D3A178592BEB9D35008FCD9C /* UIView + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178582BEB9D35008FCD9C /* UIView + Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + Ex.swift"; sourceTree = "<group>"; };
 		D3A178502BEB9180008FCD9C /* ExercisesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExercisesData.swift; path = ../../../../../.Trash/ExercisesData.swift; sourceTree = "<group>"; };
 		D3A178522BEB91A2008FCD9C /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
+		D3A178582BEB9D35008FCD9C /* UIView + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */,
+				D3A178582BEB9D35008FCD9C /* UIView + Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				D37C95922BD1AB8400739878 /* StartViewController.swift in Sources */,
 				D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */,
 				D3A178512BEB9180008FCD9C /* ExercisesData.swift in Sources */,
+				D3A178592BEB9D35008FCD9C /* UIView + Ex.swift in Sources */,
 				D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */,
 				D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */,
 				D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */,

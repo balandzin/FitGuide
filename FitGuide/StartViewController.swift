@@ -16,6 +16,8 @@ final class StartViewController: UIViewController {
         button.setTitle("Start", for: .normal)
         button.setImage(UIImage(systemName: "dumbbell.fill"), for: .normal)
         button.tintColor = .black
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -33,7 +35,7 @@ final class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.addVerticalGradientLayer()
         setupUI()
         
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
@@ -58,14 +60,14 @@ final class StartViewController: UIViewController {
     
     private func setupConstraints() {
         startButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(200)
+            make.bottom.equalToSuperview().inset(100)
             make.centerX.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(50)
+            make.width.equalTo(300)
+            make.height.equalTo(70)
         }
         
         aboutAppButton.snp.makeConstraints { make in
-            make.top.equalTo(startButton.snp.bottom).offset(20)
+            make.top.equalTo(startButton.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(50)

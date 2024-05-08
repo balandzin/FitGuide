@@ -9,8 +9,10 @@ import UIKit
 
 final class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: - Properties
     var tableView: UITableView!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Программа тренировок"
@@ -26,6 +28,7 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
 
 }
 
+// MARK: - UITableView
 extension ProgramViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         3
@@ -36,6 +39,7 @@ extension ProgramViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let program = Exercises.getProgram()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise", for: indexPath)
