@@ -36,8 +36,8 @@ final class AboutAppViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
+        view.addVerticalGradientLayer()
+
         setupUI()
         setupText()
         setupLinkAttributesForTelegram()
