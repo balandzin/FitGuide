@@ -45,7 +45,7 @@ final class StartViewController: UIViewController {
         aboutAppButton.addTarget(self, action: #selector(aboutAppButtonTapped), for: .touchUpInside)
         
         // Установка изображения гантели
-        dumbbellImageView.image = UIImage(named: "dumbbell")
+        dumbbellImageView.image = UIImage(named: "dumbbell-1")
         dumbbellImageView.contentMode = .scaleAspectFit
     }
     
@@ -56,7 +56,7 @@ final class StartViewController: UIViewController {
         if rotateAnimation == nil {
             let animation = CABasicAnimation(keyPath: "transform.rotation")
             animation.toValue = CGFloat.pi * 2.0
-            animation.duration = 3.0
+            animation.duration = 4.0
             animation.repeatCount = .infinity
             
             dumbbellImageView.layer.add(animation, forKey: "rotationAnimation")
