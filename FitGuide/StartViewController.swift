@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 final class StartViewController: UIViewController {
-
+    
     // MARK: - GUI Variables
     private lazy var startButton: UIButton = {
         let button = UIButton(type: .system)
@@ -29,6 +29,8 @@ final class StartViewController: UIViewController {
         return button
     }()
     
+    let dumbbellImageView = UIImageView()
+    
     
     
     // MARK: - Lifecycle
@@ -40,6 +42,20 @@ final class StartViewController: UIViewController {
         
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         aboutAppButton.addTarget(self, action: #selector(aboutAppButtonTapped), for: .touchUpInside)
+        
+        
+        // Установка изображения гантели
+        dumbbellImageView.image = UIImage(named: "dumbbell")
+        dumbbellImageView.contentMode = .scaleAspectFit
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Создание анимации вращения гантели
+        UIView.animate(withDuration: 2.0, delay: 0, options: [.repeat, .curveLinear], animations: {
+            self.dumbbellImageView.transform = CGAffineTransform(rotationAngle: .pi)
+        }, completion: nil)
     }
     
     // MARK: - Private Methods
@@ -54,7 +70,8 @@ final class StartViewController: UIViewController {
     private func setupUI() {
         view.addSubview(startButton)
         view.addSubview(aboutAppButton)
-        
+        view.addSubview(dumbbellImageView)
+
         setupConstraints()
     }
     
@@ -72,6 +89,13 @@ final class StartViewController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(50)
         }
+        
+        dumbbellImageView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().inset(100)
+            make.width.equalTo(150)
+            make.height.equalTo(150)
+        }
     }
-
+    
 }
