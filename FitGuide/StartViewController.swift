@@ -29,7 +29,8 @@ final class StartViewController: UIViewController {
         return button
     }()
     
-    let dumbbellImageView = UIImageView()
+    private let dumbbellImageView = UIImageView()
+    private var rotateAnimation: CABasicAnimation?
     
     
     
@@ -43,7 +44,6 @@ final class StartViewController: UIViewController {
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         aboutAppButton.addTarget(self, action: #selector(aboutAppButtonTapped), for: .touchUpInside)
         
-        
         // Установка изображения гантели
         dumbbellImageView.image = UIImage(named: "dumbbell")
         dumbbellImageView.contentMode = .scaleAspectFit
@@ -52,10 +52,26 @@ final class StartViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Создание анимации вращения гантели
-        UIView.animate(withDuration: 2.0, delay: 0, options: [.repeat, .curveLinear], animations: {
-            self.dumbbellImageView.transform = CGAffineTransform(rotationAngle: .pi)
-        }, completion: nil)
+        // Перезапуск анимации вращения гантели
+        if rotateAnimation == nil {
+            let animation = CABasicAnimation(keyPath: "transform.rotation")
+            animation.toValue = CGFloat.pi * 2.0
+            animation.duration = 2.0
+            animation.repeatCount = .infinity
+            
+            dumbbellImageView.layer.add(animation, forKey: "rotationAnimation")
+            rotateAnimation = animation
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        // Остановка анимации вращения гантели
+        if let animation = rotateAnimation {
+            dumbbellImageView.layer.removeAnimation(forKey: "rotationAnimation")
+            rotateAnimation = nil
+        }
     }
     
     // MARK: - Private Methods
@@ -71,7 +87,7 @@ final class StartViewController: UIViewController {
         view.addSubview(startButton)
         view.addSubview(aboutAppButton)
         view.addSubview(dumbbellImageView)
-
+        
         setupConstraints()
     }
     
