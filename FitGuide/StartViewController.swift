@@ -14,10 +14,19 @@ final class StartViewController: UIViewController {
     private lazy var startButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.setImage(UIImage(systemName: "dumbbell.fill"), for: .normal)
         button.tintColor = .black
-        button.backgroundColor = .white
+        button.backgroundColor = .lightGray
         button.layer.cornerRadius = 10
+        
+        // Тени
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowRadius = 4
+        
+        
         return button
     }()
     
@@ -45,7 +54,7 @@ final class StartViewController: UIViewController {
         aboutAppButton.addTarget(self, action: #selector(aboutAppButtonTapped), for: .touchUpInside)
         
         // Установка изображения гантели
-        dumbbellImageView.image = UIImage(named: "dumbbell-1")
+        dumbbellImageView.image = UIImage(named: "dumbbell")
         dumbbellImageView.contentMode = .scaleAspectFit
     }
     
@@ -56,7 +65,7 @@ final class StartViewController: UIViewController {
         if rotateAnimation == nil {
             let animation = CABasicAnimation(keyPath: "transform.rotation")
             animation.toValue = CGFloat.pi * 2.0
-            animation.duration = 4.0
+            animation.duration = 7.0
             animation.repeatCount = .infinity
             
             dumbbellImageView.layer.add(animation, forKey: "rotationAnimation")
@@ -108,7 +117,7 @@ final class StartViewController: UIViewController {
         
         dumbbellImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(150)
+            make.top.equalToSuperview().inset(180)
             make.width.equalTo(200)
             make.height.equalTo(200)
         }

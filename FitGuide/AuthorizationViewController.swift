@@ -49,8 +49,15 @@ final class AuthorizationViewController: UIViewController {
     private lazy var calculateBMIButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("Calculate body mass index", for: .normal)
-        button.backgroundColor = .blue
+        button.tintColor = .black
+        button.backgroundColor = .lightGray
         button.layer.cornerRadius = 10
+        
+        // Тени
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowRadius = 4
         button.addTarget(self, action: #selector(calculateBMIButtonTapped), for: .touchUpInside)
         
 //        // Добавляем границу кнопки
@@ -79,8 +86,15 @@ final class AuthorizationViewController: UIViewController {
     private lazy var trainProgramButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("To find an optimal training program", for: .normal)
-        button.backgroundColor = .blue
+        button.tintColor = .black
+        button.backgroundColor = .lightGray
         button.layer.cornerRadius = 10
+        
+        // Тени
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowRadius = 4
         button.addTarget(self, action: #selector(trainProgramButtonTapped), for: .touchUpInside)
         return button
     }()
