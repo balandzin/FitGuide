@@ -16,12 +16,9 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         title = "Программа тренировок"
         
         tableView = UITableView(frame: view.bounds, style: .plain)
-        
-        // Назначьте текущий класс в качестве источника данных и делегата для таблицы
         tableView.dataSource = self
         tableView.delegate = self
         
-        // Добавьте таблицу на экран
         view.addSubview(tableView)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "exercise")
