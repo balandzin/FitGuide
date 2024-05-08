@@ -16,9 +16,10 @@
 		D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */; };
 		D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */; };
 		D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783F2BE5175A008FCD9C /* AppDescription.swift */; };
-		D3A178462BEB8231008FCD9C /* ExercisesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178452BEB8231008FCD9C /* ExercisesData.swift */; };
 		D3A178482BEB8E67008FCD9C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D3A178472BEB87AC008FCD9C /* data.json */; };
 		D3A1784B2BEB8EEF008FCD9C /* Bundle + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */; };
+		D3A178512BEB9180008FCD9C /* ExercisesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178502BEB9180008FCD9C /* ExercisesData.swift */; };
+		D3A178532BEB91A2008FCD9C /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178522BEB91A2008FCD9C /* Exercises.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +33,10 @@
 		D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
 		D3A1783F2BE5175A008FCD9C /* AppDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescription.swift; sourceTree = "<group>"; };
-		D3A178452BEB8231008FCD9C /* ExercisesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesData.swift; sourceTree = "<group>"; };
 		D3A178472BEB87AC008FCD9C /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + Ex.swift"; sourceTree = "<group>"; };
+		D3A178502BEB9180008FCD9C /* ExercisesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExercisesData.swift; path = ../../../../../.Trash/ExercisesData.swift; sourceTree = "<group>"; };
+		D3A178522BEB91A2008FCD9C /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,8 @@
 		D3A1784C2BEB8F17008FCD9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D3A178452BEB8231008FCD9C /* ExercisesData.swift */,
+				D3A178502BEB9180008FCD9C /* ExercisesData.swift */,
+				D3A178522BEB91A2008FCD9C /* Exercises.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,13 +197,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */,
+				D3A178532BEB91A2008FCD9C /* Exercises.swift in Sources */,
 				D37C95922BD1AB8400739878 /* StartViewController.swift in Sources */,
 				D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */,
+				D3A178512BEB9180008FCD9C /* ExercisesData.swift in Sources */,
 				D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */,
 				D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */,
 				D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */,
 				D3A1784B2BEB8EEF008FCD9C /* Bundle + Ex.swift in Sources */,
-				D3A178462BEB8231008FCD9C /* ExercisesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
