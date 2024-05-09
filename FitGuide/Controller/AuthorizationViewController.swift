@@ -10,81 +10,11 @@ import UIKit
 final class AuthorizationViewController: UIViewController {
     
     // MARK: - GUI Variables
-    let genderSegmentedControl = CustomSegmentedControl(items: ["Male", "Female"])
-    
-    private lazy var nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.layer.cornerRadius = 10
-        textField.placeholder = "Enter your name"
-        textField.backgroundColor = .white
-        textField.autocapitalizationType = .words
-        textField.borderStyle = .roundedRect
-        
-        // Тени
-        textField.layer.shadowColor = UIColor.black.cgColor
-        textField.layer.shadowOffset = CGSize(width: 0, height: 4)
-        textField.layer.shadowOpacity = 0.5
-        textField.layer.shadowRadius = 4
-        
-        return textField
-    }()
-    
-    //    private lazy var genderSegmentedControl: UISegmentedControl = {
-    //        let segmentedControl = UISegmentedControl(items: ["Male", "Female"])
-    //        segmentedControl.selectedSegmentIndex = 0
-    //        return segmentedControl
-    //    }()
-    
-    private lazy var weightTextField: UITextField = {
-        let textField = UITextField()
-        textField.layer.cornerRadius = 10
-        textField.placeholder = "Enter your weight, kg"
-        textField.backgroundColor = .white
-        textField.keyboardType = .numberPad
-        textField.borderStyle = .roundedRect
-        
-        // Тени
-        textField.layer.shadowColor = UIColor.black.cgColor
-        textField.layer.shadowOffset = CGSize(width: 0, height: 4)
-        textField.layer.shadowOpacity = 0.5
-        textField.layer.shadowRadius = 4
-        
-        
-        return textField
-    }()
-    
-    private lazy var heightTextField: UITextField = {
-        let textField = UITextField()
-        textField.layer.cornerRadius = 10
-        textField.placeholder = "Enter your height, cm"
-        textField.backgroundColor = .white
-        textField.keyboardType = .numberPad
-        textField.borderStyle = .roundedRect
-        
-        // Тени
-        textField.layer.shadowColor = UIColor.black.cgColor
-        textField.layer.shadowOffset = CGSize(width: 0, height: 4)
-        textField.layer.shadowOpacity = 0.5
-        textField.layer.shadowRadius = 4
-        
-        return textField
-    }()
-    
-    private lazy var calculateBMIButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setTitle("Calculate body mass index", for: .normal)
-        button.tintColor = .black
-        button.backgroundColor = .lightGray
-        button.layer.cornerRadius = 10
-        
-        // Тени
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 4)
-        button.layer.shadowOpacity = 0.5
-        button.layer.shadowRadius = 4
-        button.addTarget(self, action: #selector(calculateBMIButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private let genderSegmentedControl = CustomSegmentedControl(items: ["Male", "Female"])
+    private let nameTextField = CustomTextField(withText: "Enter your name")
+    private let weightTextField = CustomTextField(withText: "Enter your weight, kg")
+    private let heightTextField = CustomTextField(withText: "Enter your height, cm")
+    private let calculateBMIButton = CustomButton(withText: "Calculate body mass index")
     
     private lazy var bodyMassIndexLabel: UILabel = {
         let label = UILabel()
@@ -98,21 +28,7 @@ final class AuthorizationViewController: UIViewController {
         return label
     } ()
     
-    private lazy var trainProgramButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setTitle("To find an optimal training program", for: .normal)
-        button.tintColor = .black
-        button.backgroundColor = .lightGray
-        button.layer.cornerRadius = 10
-        
-        // Тени
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 4)
-        button.layer.shadowOpacity = 0.5
-        button.layer.shadowRadius = 4
-        button.addTarget(self, action: #selector(trainProgramButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private let trainProgramButton = CustomButton(withText: "To find an optimal training program")
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -121,6 +37,9 @@ final class AuthorizationViewController: UIViewController {
         setupUI()
         
         genderSegmentedControl.selectedSegmentIndex = 0
+        
+        calculateBMIButton.addTarget(self, action: #selector(calculateBMIButtonTapped), for: .touchUpInside)
+        trainProgramButton.addTarget(self, action: #selector(trainProgramButtonTapped), for: .touchUpInside)      
     }
     
     // MARK: - Methods
