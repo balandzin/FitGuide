@@ -80,5 +80,3 @@ extension ProgramViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-// ПРОВЕРКА коммитов
