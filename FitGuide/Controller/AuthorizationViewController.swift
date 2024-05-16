@@ -9,6 +9,7 @@ import UIKit
 
 final class AuthorizationViewController: UIViewController {
     
+    // MARK: - Properties
     var login: String! = nil
     var password: String! = nil
     
@@ -43,7 +44,7 @@ final class AuthorizationViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -103,7 +104,7 @@ final class AuthorizationViewController: UIViewController {
                 idealBodyMassIndexLabel.text = "Идеальный индекс массы тела для женщины равен 21.5"
             }
         }
-
+        
         view.endEditing(true)
     }
     

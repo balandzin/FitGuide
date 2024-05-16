@@ -28,8 +28,8 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer()
-
-      setupUI()
+        
+        setupUI()
     }
     
     private func setupUI() {

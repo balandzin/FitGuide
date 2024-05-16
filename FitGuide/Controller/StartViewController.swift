@@ -84,7 +84,7 @@ final class StartViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    @objc private func startButtonTapped() {        
+    @objc private func startButtonTapped() {
         navigationController?.pushViewController(LoginViewController(), animated: true)
     }
     

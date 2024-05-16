@@ -8,6 +8,7 @@
 import UIKit
 
 final class RegisterViewController: UIViewController {
+    
     // MARK: - GUI Variables
     private let loginTextField = CustomTextField(withText: AppConstants.loginTextFieldText)
     private let passwordTextField = CustomTextField(withText: AppConstants.passwordTextFieldText)
@@ -19,9 +20,9 @@ final class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer()
-
+        
         title = "Register"
-      setupUI()
+        setupUI()
     }
     
     // MARK: - Private Methods

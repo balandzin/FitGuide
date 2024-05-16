@@ -77,7 +77,6 @@ extension ProgramViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        
         if indexPath.row == 0 {
             content.text = program[indexPath.section].exercises1
             content.image = UIImage(systemName: "figure.run")

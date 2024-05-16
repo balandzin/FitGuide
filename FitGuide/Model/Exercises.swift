@@ -61,5 +61,4 @@ struct Exercises: Codable {
         
         return exercises
     }
-    
 }
