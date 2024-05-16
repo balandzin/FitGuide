@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct AppConstants {
+    static let telegramLink = "https://t.me/+375336886070"
+    static let loginTextFieldText = "Enter your login"
+    static let passwordTextFieldText = "Enter your password"
+}

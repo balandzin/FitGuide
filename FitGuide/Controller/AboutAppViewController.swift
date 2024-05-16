@@ -10,7 +10,7 @@ import UIKit
 final class AboutAppViewController: UIViewController {
     
     // MARK: - Properties
-    private let telegramLink = "https://t.me/+375336886070"
+    private let telegramLink = AppConstants.telegramLink
     
     // MARK: - GUI Variables
     private lazy var scrollView: UIScrollView = {
@@ -74,24 +74,30 @@ final class AboutAppViewController: UIViewController {
     }
     
     private func setupText() {
-        let description = AppDescription().description
+        let description = AppDescription.description
         
-        let attributedString = NSAttributedString(string: description,
-                                                  attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18),
-                                                               NSAttributedString.Key.foregroundColor: UIColor.black,
-                                                               NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
+        let attributedString = NSAttributedString(
+            string: description,
+            attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18),
+                         NSAttributedString.Key.foregroundColor: UIColor.black,
+                         NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        )
         
         descriptionLabel.attributedText = attributedString
     }
     
     private func setupLinkAttributesForTelegram() {
-        let attributedString = NSMutableAttributedString(string: "Нажмите, чтобы связаться с разработчиком в Telegram")
+        let attributedString = NSMutableAttributedString(
+            string: "Нажмите, чтобы связаться с разработчиком в Telegram"
+        )
         let linkRange = attributedString.mutableString.range(of: "Telegram")
         attributedString.addAttribute(.link, value: telegramLink, range: linkRange)
         telegramLabel.attributedText = attributedString
         
         telegramLabel.isUserInteractionEnabled = true
-        telegramLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openTelegramLink)))
+        telegramLabel.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(openTelegramLink))
+        )
     }
     
     @objc func openTelegramLink() {

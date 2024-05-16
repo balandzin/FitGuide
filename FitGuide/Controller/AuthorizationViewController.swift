@@ -53,8 +53,16 @@ final class AuthorizationViewController: UIViewController {
         
         genderSegmentedControl.selectedSegmentIndex = 0
         
-        calculateBMIButton.addTarget(self, action: #selector(calculateBMIButtonTapped), for: .touchUpInside)
-        trainProgramButton.addTarget(self, action: #selector(trainProgramButtonTapped), for: .touchUpInside)      
+        calculateBMIButton.addTarget(
+            self,
+            action: #selector(calculateBMIButtonTapped),
+            for: .touchUpInside
+        )
+        trainProgramButton.addTarget(
+            self,
+            action: #selector(trainProgramButtonTapped),
+            for: .touchUpInside
+        )      
     }
     
     // MARK: - Methods

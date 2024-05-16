@@ -10,8 +10,8 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     // MARK: - GUI Variables
-    private let loginTextField = CustomTextField(withText: "Enter your login")
-    private let passwordTextField = CustomTextField(withText: "Enter your password")
+    private let loginTextField = CustomTextField(withText: AppConstants.loginTextFieldText)
+    private let passwordTextField = CustomTextField(withText: AppConstants.passwordTextFieldText)
     private let loginButton = CustomButton(withText: "Login")
     
     private let userExerciseStorage = UserExerciseStorage.shared
@@ -85,7 +85,8 @@ final class LoginViewController: UIViewController {
     private func isCorrectData() -> Bool {
         
         guard let login = loginTextField.text, !login.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty && userExerciseStorage.checkCredentials(login: login, password: password)
+              let password = passwordTextField.text, !password.isEmpty 
+                && userExerciseStorage.checkCredentials(login: login, password: password)
         else {
             return false
         }
@@ -97,9 +98,13 @@ final class LoginViewController: UIViewController {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        if userExerciseStorage.checkCredentials(login: login, password: password) && isCorrectData() {
+        if userExerciseStorage.checkCredentials(login: login, password: password) 
+            && isCorrectData() {
             
-            navigationController?.pushViewController(AuthorizationViewController(login: login, password: password), animated: true)
+            navigationController?.pushViewController(
+                AuthorizationViewController(login: login, password: password),
+                animated: true
+            )
         } else {
             showAlert(message: "Incorrect login or password")
         }

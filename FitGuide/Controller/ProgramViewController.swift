@@ -49,7 +49,11 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         
         if program.count == 0 {
             program = Exercises.getProgram()
-            userExerciseStorage.updateUserData(login: login, password: password, exercises: program)
+            userExerciseStorage.updateUserData(
+                login: login,
+                password: password,
+                exercises: program
+            )
         }
         
         return program

@@ -9,8 +9,8 @@ import UIKit
 
 final class RegisterViewController: UIViewController {
     // MARK: - GUI Variables
-    private let loginTextField = CustomTextField(withText: "Enter your login")
-    private let passwordTextField = CustomTextField(withText: "Enter your password")
+    private let loginTextField = CustomTextField(withText: AppConstants.loginTextFieldText)
+    private let passwordTextField = CustomTextField(withText: AppConstants.passwordTextFieldText)
     private let registerButton = CustomButton(withText: "Save")
     
     private let userExerciseStorage = UserExerciseStorage.shared
@@ -81,11 +81,21 @@ final class RegisterViewController: UIViewController {
         let password = passwordTextField.text ?? ""
         
         if isCorrectData() {
-            if !userExerciseStorage.checkCredentials(login: loginTextField.text ?? "", password: passwordTextField.text ?? "") {
+            if !userExerciseStorage.checkCredentials(
+                login: loginTextField.text ?? "",
+                password: passwordTextField.text ?? ""
+            ) {
                 
-                userExerciseStorage.addUserData(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", exercises: [])
+                userExerciseStorage.addUserData(
+                    login: loginTextField.text ?? "",
+                    password: passwordTextField.text ?? "",
+                    exercises: []
+                )
                 
-                navigationController?.pushViewController(AuthorizationViewController(login: login, password: password), animated: true)
+                navigationController?.pushViewController(
+                    AuthorizationViewController(login: login, password: password),
+                    animated: true
+                )
             } else {
                 showAlert(message: "This user already exists")
             }
