@@ -13,7 +13,6 @@ final class CustomTextField: UITextField {
         super.init(frame: .zero)
         placeholder = text
         backgroundColor = .white
-        //autocapitalizationType = .words
         borderStyle = .roundedRect
         tintColor = .black
         layer.cornerRadius = 10

@@ -96,12 +96,12 @@
 		D37C957C2BD0118000739878 /* FitGuide */ = {
 			isa = PBXGroup;
 			children = (
+				D3A1784C2BEB8F17008FCD9C /* Model */,
 				D3A1785F2BEC2B44008FCD9C /* View */,
 				D3A178602BEC2B6F008FCD9C /* Controller */,
 				D32800572BF6290C006603E4 /* StorageManager */,
 				D3A178492BEB8ECE008FCD9C /* Extensions */,
 				D3A1784D2BEB8F54008FCD9C /* Resources */,
-				D3A1784C2BEB8F17008FCD9C /* Model */,
 				D3A1784E2BEB8F92008FCD9C /* SupportingFiles */,
 				D37C95882BD0118200739878 /* LaunchScreen.storyboard */,
 			);
