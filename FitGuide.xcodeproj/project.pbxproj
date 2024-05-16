@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D328004E2BF60001006603E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328004D2BF60001006603E4 /* LoginViewController.swift */; };
+		D32800502BF6088E006603E4 /* UserExerciseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328004F2BF6088E006603E4 /* UserExerciseStorage.swift */; };
+		D32800522BF60F02006603E4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32800512BF60F02006603E4 /* RegisterViewController.swift */; };
+		D32800542BF61D8F006603E4 /* ViewController + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32800532BF61D8F006603E4 /* ViewController + Ex.swift */; };
+		D32800562BF6222D006603E4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32800552BF6222D006603E4 /* AppConstants.swift */; };
 		D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C957D2BD0118000739878 /* AppDelegate.swift */; };
 		D37C958A2BD0118200739878 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D37C95892BD0118200739878 /* Base */; };
 		D37C95922BD1AB8400739878 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C95912BD1AB8400739878 /* StartViewController.swift */; };
@@ -27,6 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D328004D2BF60001006603E4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D328004F2BF6088E006603E4 /* UserExerciseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExerciseStorage.swift; sourceTree = "<group>"; };
+		D32800512BF60F02006603E4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D32800532BF61D8F006603E4 /* ViewController + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ex.swift"; sourceTree = "<group>"; };
+		D32800552BF6222D006603E4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D37C957A2BD0118000739878 /* FitGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37C957D2BD0118000739878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D37C95892BD0118200739878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */,
+				D32800532BF61D8F006603E4 /* ViewController + Ex.swift */,
 				D3A178582BEB9D35008FCD9C /* UIView + Ex.swift */,
 			);
 			path = Extensions;
@@ -111,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A1783F2BE5175A008FCD9C /* AppDescription.swift */,
+				D32800552BF6222D006603E4 /* AppConstants.swift */,
 				D3A1785C2BEC2350008FCD9C /* Assets.xcassets */,
 				D3A178472BEB87AC008FCD9C /* data.json */,
 			);
@@ -141,8 +153,11 @@
 			children = (
 				D37C95912BD1AB8400739878 /* StartViewController.swift */,
 				D37C95962BE3C03100739878 /* AboutAppViewController.swift */,
+				D328004D2BF60001006603E4 /* LoginViewController.swift */,
+				D32800512BF60F02006603E4 /* RegisterViewController.swift */,
 				D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */,
 				D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */,
+				D328004F2BF6088E006603E4 /* UserExerciseStorage.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,15 +239,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D328004E2BF60001006603E4 /* LoginViewController.swift in Sources */,
+				D32800562BF6222D006603E4 /* AppConstants.swift in Sources */,
 				D3A178662BECB9BB008FCD9C /* CustomTextField.swift in Sources */,
 				D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */,
+				D32800542BF61D8F006603E4 /* ViewController + Ex.swift in Sources */,
 				D3A178532BEB91A2008FCD9C /* Exercises.swift in Sources */,
 				D37C95922BD1AB8400739878 /* StartViewController.swift in Sources */,
 				D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */,
 				D3A178592BEB9D35008FCD9C /* UIView + Ex.swift in Sources */,
 				D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */,
 				D3A178622BEC2BA8008FCD9C /* CustomSegmentedControl.swift in Sources */,
+				D32800502BF6088E006603E4 /* UserExerciseStorage.swift in Sources */,
 				D3A178642BECB683008FCD9C /* CustomButton.swift in Sources */,
+				D32800522BF60F02006603E4 /* RegisterViewController.swift in Sources */,
 				D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */,
 				D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */,
 				D3A1784B2BEB8EEF008FCD9C /* Bundle + Ex.swift in Sources */,

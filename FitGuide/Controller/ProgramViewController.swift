@@ -12,6 +12,20 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Properties
     var tableView: UITableView!
     
+    private var login: String! = nil
+    private var password: String! = nil
+    
+    // MARK: - Initialization
+    init(login: String, password: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.login = login
+        self.password = password
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +40,20 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "exercise")
     }
     
+    // MARK: - Private Methods
+    private func getProgram() -> [Exercises] {
+        let userExerciseStorage = UserExerciseStorage.shared
+        let program = userExerciseStorage.getUserExercises(login: login, password: password)
+        
+        guard var program else { return [] }
+        
+        if program.count == 0 {
+            program = Exercises.getProgram()
+            userExerciseStorage.updateUserData(login: login, password: password, exercises: program)
+        }
+        
+        return program
+    }
 }
 
 // MARK: - UITableView
@@ -40,7 +68,7 @@ extension ProgramViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let program = Exercises.getProgram()
+        let program = getProgram()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise", for: indexPath)
         var content = cell.defaultContentConfiguration()
@@ -76,7 +104,7 @@ extension ProgramViewController {
         return program[section].day
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }

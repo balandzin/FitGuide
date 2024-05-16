@@ -9,6 +9,7 @@ import UIKit
 
 final class AboutAppViewController: UIViewController {
     
+    // MARK: - Properties
     private let telegramLink = "https://t.me/+375336886070"
     
     // MARK: - GUI Variables

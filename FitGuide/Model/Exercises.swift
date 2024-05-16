@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exercises {
+struct Exercises: Codable {
     
     let day: String
     let exercises1: String

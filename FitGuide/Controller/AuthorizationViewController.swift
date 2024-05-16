@@ -9,6 +9,9 @@ import UIKit
 
 final class AuthorizationViewController: UIViewController {
     
+    var login: String! = nil
+    var password: String! = nil
+    
     // MARK: - GUI Variables
     private let genderSegmentedControl = CustomSegmentedControl(items: ["Male", "Female"])
     private let nameTextField = CustomTextField(withText: "Enter your name")
@@ -29,6 +32,18 @@ final class AuthorizationViewController: UIViewController {
     } ()
     
     private let trainProgramButton = CustomButton(withText: "To find an optimal training program")
+    
+    // MARK: - Initialization
+    init(login: String, password: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.login = login
+        self.password = password
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -80,16 +95,12 @@ final class AuthorizationViewController: UIViewController {
                 idealBodyMassIndexLabel.text = "Идеальный индекс массы тела для женщины равен 21.5"
             }
         }
-        
+
         view.endEditing(true)
     }
     
     @objc private func trainProgramButtonTapped() {
-        if isCorrectData() {
-            navigationController?.pushViewController(ProgramViewController(), animated: true)
-        } else {
-            showAlert(message: "Введите корректные данные пользователя")
-        }
+        navigationController?.pushViewController(ProgramViewController(login: login, password: password), animated: true)
     }
     
     private func setupConstraints() {
