@@ -9,6 +9,9 @@ import UIKit
 
 final class RegisterViewController: UIViewController {
     
+    // MARK: - Properties
+    private var user = User()
+    
     // MARK: - GUI Variables
     private let loginTextField = CustomTextField(withText: AppConstants.loginTextFieldText)
     private let passwordTextField = CustomTextField(withText: AppConstants.passwordTextFieldText)
@@ -93,8 +96,11 @@ final class RegisterViewController: UIViewController {
                     exercises: []
                 )
                 
+                user.login = login
+                user.password = password
+                
                 navigationController?.setViewControllers(
-                    [AuthorizationViewController(login: login, password: password)],
+                    [AuthorizationViewController(user: user)],
                     animated: true
                 )
             } else {

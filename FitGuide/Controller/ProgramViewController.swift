@@ -10,16 +10,14 @@ import UIKit
 final class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
-    var tableView: UITableView!
+    private var tableView: UITableView!
     
-    private var login: String?
-    private var password: String?
+    private var user = User()
     
     // MARK: - Initialization
-    init(login: String, password: String) {
+    init(user: User) {
+        self.user = user
         super.init(nibName: nil, bundle: nil)
-        self.login = login
-        self.password = password
     }
     
     required init?(coder: NSCoder) {
@@ -52,8 +50,8 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
     private func getProgram() -> [Exercises] {
         let userExerciseStorage = UserExerciseStorage.shared
         let program = userExerciseStorage.getUserExercises(
-            login: login ?? "",
-            password: password ?? ""
+            login: user.login,
+            password: user.password
         )
         
         guard var program else { return [] }
@@ -61,8 +59,8 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         if program.count == 0 {
             program = Exercises.getProgram()
             userExerciseStorage.updateUserData(
-                login: login ?? "",
-                password: password ?? "",
+                login: user.login,
+                password: user.password,
                 exercises: program
             )
         }

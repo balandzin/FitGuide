@@ -10,8 +10,7 @@ import UIKit
 final class AuthorizationViewController: UIViewController {
     
     // MARK: - Properties
-    var login: String?
-    var password: String?
+    private var user = User()
     
     // MARK: - GUI Variables
     private let genderSegmentedControl = CustomSegmentedControl(items: ["Male", "Female"])
@@ -44,10 +43,9 @@ final class AuthorizationViewController: UIViewController {
     private let trainProgramButton = CustomButton(withText: "To find an optimal training program")
     
     // MARK: - Initialization
-    init(login: String, password: String) {
+    init(user: User) {
+        self.user = user
         super.init(nibName: nil, bundle: nil)
-        self.login = login
-        self.password = password
     }
     
     required init?(coder: NSCoder) {
@@ -131,9 +129,9 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @objc private func trainProgramButtonTapped() {
-        guard let login, let password else { return }
+        //guard let login, let password else { return }
         navigationController?.pushViewController(
-            ProgramViewController(login: login, password: password),
+            ProgramViewController(user: user),
             animated: true
         )
     }

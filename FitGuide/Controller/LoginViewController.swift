@@ -9,6 +9,9 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    // MARK: - Properties
+    private var user = User()
+    
     // MARK: - GUI Variables
     private let loginTextField = CustomTextField(withText: AppConstants.loginTextFieldText)
     private let passwordTextField = CustomTextField(withText: AppConstants.passwordTextFieldText)
@@ -98,11 +101,14 @@ final class LoginViewController: UIViewController {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        if userExerciseStorage.checkCredentials(login: login, password: password) 
+        if userExerciseStorage.checkCredentials(login: login, password: password)
             && isCorrectData() {
             
+            user.login = login
+            user.password = password
+            
             navigationController?.setViewControllers(
-                [ProgramViewController(login: login, password: password)],
+                [ProgramViewController(user: user)],
                 animated: true
             )
         } else {
