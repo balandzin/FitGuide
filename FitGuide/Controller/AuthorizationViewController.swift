@@ -32,6 +32,15 @@ final class AuthorizationViewController: UIViewController {
         return label
     } ()
     
+    private lazy var infoButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(.blue, for: .normal)
+        button.setImage(UIImage(systemName: "info.circle.fill"), for: .normal)
+        button.setTitle("Info", for: .normal)
+        button.isHidden = true
+        return button
+    }()
+    
     private let trainProgramButton = CustomButton(withText: "To find an optimal training program")
     
     // MARK: - Initialization
@@ -63,7 +72,13 @@ final class AuthorizationViewController: UIViewController {
             self,
             action: #selector(trainProgramButtonTapped),
             for: .touchUpInside
-        )      
+        )
+        
+        infoButton.addTarget(
+            self,
+            action: #selector(infoButtonTapped),
+            for: .touchUpInside
+        )
     }
     
     // MARK: - Methods
@@ -81,6 +96,7 @@ final class AuthorizationViewController: UIViewController {
         view.addSubview(calculateBMIButton)
         view.addSubview(bodyMassIndexLabel)
         view.addSubview(idealBodyMassIndexLabel)
+        view.addSubview(infoButton)
         view.addSubview(trainProgramButton)
         
         view.addSubview(genderSegmentedControl)
@@ -90,7 +106,7 @@ final class AuthorizationViewController: UIViewController {
     
     @objc private func calculateBMIButtonTapped() {
         if !isCorrectData() {
-            showAlert(message: "Введите корректные данные пользователя")
+            showAlert(message: AppConstants.incorrectDataMessage)
             
         } else {
             bodyMassIndexLabel.text = """
@@ -99,13 +115,19 @@ final class AuthorizationViewController: UIViewController {
             """
             
             if genderSegmentedControl.selectedSegmentIndex == 0 {
-                idealBodyMassIndexLabel.text = "Идеальный индекс массы тела для мужчины равен 23"
+                idealBodyMassIndexLabel.text = AppConstants.idealBodyMassIndexForMale
             } else {
-                idealBodyMassIndexLabel.text = "Идеальный индекс массы тела для женщины равен 21.5"
+                idealBodyMassIndexLabel.text = AppConstants.idealBodyMassIndexForFemale
             }
+            
+            infoButton.isHidden = false
         }
         
         view.endEditing(true)
+    }
+    
+    @objc private func infoButtonTapped() {
+        showAlert(message: AppConstants.idealBodyMassIndexInfo)
     }
     
     @objc private func trainProgramButtonTapped() {
@@ -151,6 +173,11 @@ final class AuthorizationViewController: UIViewController {
         idealBodyMassIndexLabel.snp.makeConstraints { make in
             make.top.equalTo(bodyMassIndexLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        infoButton.snp.makeConstraints { make in
+            make.top.equalTo(idealBodyMassIndexLabel.snp.bottom).offset(20)
+            make.leading.equalToSuperview().inset(16)
         }
         
         trainProgramButton.snp.makeConstraints { make in

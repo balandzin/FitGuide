@@ -106,7 +106,7 @@ final class LoginViewController: UIViewController {
                 animated: true
             )
         } else {
-            showAlert(message: "Incorrect login or password")
+            showAlert(message: AppConstants.incorrectLoginOrPassword)
         }
     }
     

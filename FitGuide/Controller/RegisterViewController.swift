@@ -98,10 +98,10 @@ final class RegisterViewController: UIViewController {
                     animated: true
                 )
             } else {
-                showAlert(message: "This user already exists")
+                showAlert(message: AppConstants.userExistsMessage)
             }
         } else {
-            showAlert(message: "Incorrect login or password")
+            showAlert(message: AppConstants.incorrectLoginOrPassword)
         }
     }
 }
