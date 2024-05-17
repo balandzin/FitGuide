@@ -93,8 +93,8 @@ final class RegisterViewController: UIViewController {
                     exercises: []
                 )
                 
-                navigationController?.pushViewController(
-                    AuthorizationViewController(login: login, password: password),
+                navigationController?.setViewControllers(
+                    [AuthorizationViewController(login: login, password: password)],
                     animated: true
                 )
             } else {

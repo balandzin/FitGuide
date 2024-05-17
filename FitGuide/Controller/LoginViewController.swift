@@ -31,7 +31,7 @@ final class LoginViewController: UIViewController {
         
         setupUI()
     }
-    
+
     private func setupUI() {
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
@@ -101,8 +101,8 @@ final class LoginViewController: UIViewController {
         if userExerciseStorage.checkCredentials(login: login, password: password) 
             && isCorrectData() {
             
-            navigationController?.pushViewController(
-                ProgramViewController(login: login, password: password),
+            navigationController?.setViewControllers(
+                [ProgramViewController(login: login, password: password)],
                 animated: true
             )
         } else {

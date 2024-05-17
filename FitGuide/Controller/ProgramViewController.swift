@@ -38,6 +38,14 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         view.addSubview(tableView)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "exercise")
+        
+        let exitButton = UIBarButtonItem(
+            title: "Done",
+            style: .plain,
+            target: self,
+            action: #selector(exitButtonTapped)
+        )
+        self.navigationItem.rightBarButtonItem = exitButton
     }
     
     // MARK: - Private Methods
@@ -60,6 +68,11 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         return program
+    }
+    
+    // MARK: - Actions
+    @objc private func exitButtonTapped() {
+        navigationController?.setViewControllers([LoginViewController()], animated: true)
     }
 }
 

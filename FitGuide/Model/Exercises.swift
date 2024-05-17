@@ -52,7 +52,6 @@ struct Exercises: Codable {
             exercises4: exercisesData.shouldersFirstExercise.randomElement() ?? "",
             exercises5: exercisesData.shouldersSecondExercise.randomElement() ?? "",
             exercises6: exercisesData.hitch.randomElement() ?? ""
-            
         )
         
         exercises.append(day1)
