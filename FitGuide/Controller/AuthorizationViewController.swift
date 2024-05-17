@@ -227,7 +227,9 @@ final class AuthorizationViewController: UIViewController {
         let height = Double(heightTextField.text ?? "1") ?? 1
         let weight = Double(weightTextField.text ?? "0") ?? 0
         
-        if nameTextField.text != "" && (100...250).contains(height) && (20...200).contains(weight) {
+        if nameTextField.text != "" && (
+            100...250
+        ).contains(height) && (20...200).contains(weight) {
             return true
         } else {
             return false

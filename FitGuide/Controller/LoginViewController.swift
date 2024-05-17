@@ -19,7 +19,7 @@ final class LoginViewController: UIViewController {
     private lazy var registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Register", for: .normal)
-        button.setImage(UIImage(systemName: "person"), for: .normal)
+        button.setImage(UIImage(systemName: "person.fill"), for: .normal)
         button.tintColor = .blue
         return button
     }()

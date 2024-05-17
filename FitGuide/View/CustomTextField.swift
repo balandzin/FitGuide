@@ -17,6 +17,8 @@ final class CustomTextField: UITextField {
         tintColor = .black
         layer.cornerRadius = 10
         
+        heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
         // Тени
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 4)

@@ -16,7 +16,7 @@ final class StartViewController: UIViewController {
         button.setTitle("Start", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.setImage(UIImage(systemName: "dumbbell.fill"), for: .normal)
-        button.tintColor = .black
+        button.tintColor = .white
         button.backgroundColor = .lightGray
         button.layer.cornerRadius = 10
         
@@ -26,7 +26,6 @@ final class StartViewController: UIViewController {
         button.layer.shadowOpacity = 0.5
         button.layer.shadowRadius = 4
         
-        
         return button
     }()
     
@@ -34,7 +33,7 @@ final class StartViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("About App", for: .normal)
         button.setImage(UIImage(systemName: "info.circle.fill"), for: .normal)
-        button.tintColor = .black
+        button.tintColor = .blue
         return button
     }()
     
