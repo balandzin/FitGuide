@@ -12,8 +12,8 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Properties
     var tableView: UITableView!
     
-    private var login: String! = nil
-    private var password: String! = nil
+    private var login: String?
+    private var password: String?
     
     // MARK: - Initialization
     init(login: String, password: String) {
@@ -43,15 +43,18 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Private Methods
     private func getProgram() -> [Exercises] {
         let userExerciseStorage = UserExerciseStorage.shared
-        let program = userExerciseStorage.getUserExercises(login: login, password: password)
+        let program = userExerciseStorage.getUserExercises(
+            login: login ?? "",
+            password: password ?? ""
+        )
         
         guard var program else { return [] }
         
         if program.count == 0 {
             program = Exercises.getProgram()
             userExerciseStorage.updateUserData(
-                login: login,
-                password: password,
+                login: login ?? "",
+                password: password ?? "",
                 exercises: program
             )
         }

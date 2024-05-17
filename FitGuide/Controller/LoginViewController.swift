@@ -102,7 +102,7 @@ final class LoginViewController: UIViewController {
             && isCorrectData() {
             
             navigationController?.pushViewController(
-                AuthorizationViewController(login: login, password: password),
+                ProgramViewController(login: login, password: password),
                 animated: true
             )
         } else {

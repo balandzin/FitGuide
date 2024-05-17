@@ -10,8 +10,8 @@ import UIKit
 final class AuthorizationViewController: UIViewController {
     
     // MARK: - Properties
-    var login: String! = nil
-    var password: String! = nil
+    var login: String?
+    var password: String?
     
     // MARK: - GUI Variables
     private let genderSegmentedControl = CustomSegmentedControl(items: ["Male", "Female"])
@@ -109,7 +109,11 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @objc private func trainProgramButtonTapped() {
-        navigationController?.pushViewController(ProgramViewController(login: login, password: password), animated: true)
+        guard let login, let password else { return }
+        navigationController?.pushViewController(
+            ProgramViewController(login: login, password: password),
+            animated: true
+        )
     }
     
     private func setupConstraints() {
