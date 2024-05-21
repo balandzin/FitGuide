@@ -30,9 +30,9 @@ final class LoginViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer()
         
         setupUI()
+        setupButtonTarget()
     }
 
     private func setupUI() {
@@ -43,13 +43,16 @@ final class LoginViewController: UIViewController {
         
         setupConstraints()
         
+        view.addVerticalGradientLayer()
         title = "Sign In"
-        
+    }
+    
+    // MARK: - Private Methods
+    private func setupButtonTarget() {
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
     
-    // MARK: - Private Methods
     private func setupConstraints() {
         loginTextField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(40)

@@ -18,6 +18,7 @@ final class AuthorizationViewController: UIViewController {
     private let weightTextField = CustomTextField(withText: "Enter your weight, kg")
     private let heightTextField = CustomTextField(withText: "Enter your height, cm")
     private let calculateBMIButton = CustomButton(withText: "Calculate body mass index")
+    private let trainProgramButton = CustomButton(withText: "To find an optimal training program")
     
     private let bodyMassIndexLabel: UILabel = {
         let label = UILabel()
@@ -40,8 +41,6 @@ final class AuthorizationViewController: UIViewController {
         return button
     }()
     
-    private let trainProgramButton = CustomButton(withText: "To find an optimal training program")
-    
     // MARK: - Initialization
     init(user: User) {
         self.user = user
@@ -56,11 +55,19 @@ final class AuthorizationViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer()
+        
         setupUI()
-        
-        genderSegmentedControl.selectedSegmentIndex = 0
-        
+        setupButtonTarget()
+    }
+    
+    // MARK: - Methods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    // MARK: - Private Methods
+    private func setupButtonTarget() {
         calculateBMIButton.addTarget(
             self,
             action: #selector(calculateBMIButtonTapped),
@@ -79,13 +86,6 @@ final class AuthorizationViewController: UIViewController {
         )
     }
     
-    // MARK: - Methods
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
-    // MARK: - Private Methods
     private func setupUI() {
         view.addSubview(nameTextField)
         view.addSubview(genderSegmentedControl)
@@ -99,7 +99,11 @@ final class AuthorizationViewController: UIViewController {
         
         view.addSubview(genderSegmentedControl)
         
+        view.addVerticalGradientLayer()
+
         setupConstraints()
+        
+        genderSegmentedControl.selectedSegmentIndex = 0
     }
     
     @objc private func calculateBMIButtonTapped() {

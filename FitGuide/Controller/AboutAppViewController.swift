@@ -37,9 +37,7 @@ final class AboutAppViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer()
         
-        title = "О приложении"
         setupUI()
         setupText()
         setupLinkAttributesForTelegram()
@@ -52,6 +50,9 @@ final class AboutAppViewController: UIViewController {
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(telegramLabel)
         setupConstraints()
+        
+        view.addVerticalGradientLayer()
+        title = "О приложении"
     }
     
     private func setupConstraints() {

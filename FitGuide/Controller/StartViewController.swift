@@ -46,15 +46,8 @@ final class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addVerticalGradientLayer()
         setupUI()
-        
-        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
-        aboutAppButton.addTarget(self, action: #selector(aboutAppButtonTapped), for: .touchUpInside)
-        
-        // Установка изображения гантели
-        dumbbellImageView.image = UIImage(named: "dumbbell")
-        dumbbellImageView.contentMode = .scaleAspectFit
+        setupButtonTarget()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,12 +84,23 @@ final class StartViewController: UIViewController {
         navigationController?.pushViewController(AboutAppViewController(), animated: true)
     }
     
+    private func setupButtonTarget() {
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+        aboutAppButton.addTarget(self, action: #selector(aboutAppButtonTapped), for: .touchUpInside)
+    }
+    
     private func setupUI() {
         view.addSubview(startButton)
         view.addSubview(aboutAppButton)
         view.addSubview(dumbbellImageView)
         
         setupConstraints()
+        
+        view.addVerticalGradientLayer()
+        
+        // Установка изображения гантели
+        dumbbellImageView.image = UIImage(named: "dumbbell")
+        dumbbellImageView.contentMode = .scaleAspectFit
     }
     
     private func setupConstraints() {

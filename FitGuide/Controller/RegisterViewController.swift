@@ -22,13 +22,16 @@ final class RegisterViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer()
         
-        title = "Register"
         setupUI()
+        setupButtonTarget()
     }
     
     // MARK: - Private Methods
+    private func setupButtonTarget() {
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+    }
+    
     private func setupUI() {
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
@@ -36,7 +39,8 @@ final class RegisterViewController: UIViewController {
         
         setupConstraints()
         
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        view.addVerticalGradientLayer()
+        title = "Register"
     }
     
     private func setupConstraints() {
