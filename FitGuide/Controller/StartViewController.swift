@@ -90,9 +90,7 @@ final class StartViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.addSubview(startButton)
-        view.addSubview(aboutAppButton)
-        view.addSubview(dumbbellImageView)
+        view.addSubviews([startButton, aboutAppButton, dumbbellImageView])
         
         setupConstraints()
         

@@ -87,15 +87,20 @@ final class AuthorizationViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.addSubview(nameTextField)
-        view.addSubview(genderSegmentedControl)
-        view.addSubview(weightTextField)
-        view.addSubview(heightTextField)
-        view.addSubview(updateLabelInfo)
-        view.addSubview(bodyMassIndexLabel)
-        view.addSubview(idealBodyMassIndexLabel)
-        view.addSubview(infoButton)
-        view.addSubview(trainProgramButton)
+        
+        view.addSubviews(
+            [
+                nameTextField,
+                genderSegmentedControl,
+                weightTextField,
+                heightTextField,
+                updateLabelInfo,
+                bodyMassIndexLabel,
+                idealBodyMassIndexLabel,
+                infoButton,
+                trainProgramButton
+            ]
+        )
         
         view.addSubview(genderSegmentedControl)
         

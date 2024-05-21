@@ -33,9 +33,8 @@ final class RegisterViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.addSubview(loginTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(registerButton)
+        view.addSubviews([loginTextField, passwordTextField, registerButton])
+        
         
         setupConstraints()
         

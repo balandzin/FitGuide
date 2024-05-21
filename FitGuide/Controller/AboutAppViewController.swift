@@ -45,10 +45,8 @@ final class AboutAppViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupUI() {
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        contentView.addSubview(descriptionLabel)
-        contentView.addSubview(telegramLabel)
+        view.addSubviews([scrollView, contentView, descriptionLabel, telegramLabel])
+        
         setupConstraints()
         
         view.addVerticalGradientLayer()

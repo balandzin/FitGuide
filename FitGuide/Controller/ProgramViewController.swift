@@ -47,28 +47,6 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
         self.navigationItem.rightBarButtonItem = exitButton
     }
     
-    // MARK: - Private Methods
-    private func getProgram() -> [Exercises] {
-        let userExerciseStorage = UserExerciseStorage.shared
-        let program = userExerciseStorage.getUserExercises(
-            login: user.login,
-            password: user.password
-        )
-        
-        guard var program else { return [] }
-        
-        if program.count == 0 {
-            program = Exercises.getProgram()
-            userExerciseStorage.updateUserData(
-                login: user.login,
-                password: user.password,
-                exercises: program
-            )
-        }
-        
-        return program
-    }
-    
     // MARK: - Actions
     @objc private func exitButtonTapped() {
         navigationController?.setViewControllers([LoginViewController()], animated: true)
@@ -87,7 +65,7 @@ extension ProgramViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let program = getProgram()
+        let program = user.getProgram(login: user.login, password: user.password)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise", for: indexPath)
         var content = cell.defaultContentConfiguration()
@@ -111,7 +89,7 @@ extension ProgramViewController {
             content.text = program[indexPath.section].exercises6
             content.image = UIImage(systemName: "figure.cooldown")
         }
-        
+                
         cell.contentConfiguration = content
         
         return cell

@@ -47,4 +47,25 @@ class User {
             return false
         }
     }
+    
+    func getProgram(login: String, password: String) -> [Exercises] {
+        let userExerciseStorage = UserExerciseStorage.shared
+        let program = userExerciseStorage.getUserExercises(
+            login: login,
+            password: password
+        )
+        
+        guard var program else { return [] }
+        
+        if program.count == 0 {
+            program = Exercises.getProgram()
+            userExerciseStorage.updateUserData(
+                login: login,
+                password: password,
+                exercises: program
+            )
+        }
+        
+        return program
+    }
 }
