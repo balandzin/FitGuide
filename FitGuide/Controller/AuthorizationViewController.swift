@@ -17,7 +17,7 @@ final class AuthorizationViewController: UIViewController {
     private let nameTextField = CustomTextField(withText: "Enter your name")
     private let weightTextField = CustomTextField(withText: "Enter your weight, kg")
     private let heightTextField = CustomTextField(withText: "Enter your height, cm")
-    private let calculateBMIButton = CustomButton(withText: "Calculate body mass index")
+    private let updateLabelInfo = CustomButton(withText: "Calculate body mass index")
     private let trainProgramButton = CustomButton(withText: "To find an optimal training program")
     
     private let bodyMassIndexLabel: UILabel = {
@@ -68,7 +68,7 @@ final class AuthorizationViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupButtonTarget() {
-        calculateBMIButton.addTarget(
+        updateLabelInfo.addTarget(
             self,
             action: #selector(calculateBMIButtonTapped),
             for: .touchUpInside
@@ -91,7 +91,7 @@ final class AuthorizationViewController: UIViewController {
         view.addSubview(genderSegmentedControl)
         view.addSubview(weightTextField)
         view.addSubview(heightTextField)
-        view.addSubview(calculateBMIButton)
+        view.addSubview(updateLabelInfo)
         view.addSubview(bodyMassIndexLabel)
         view.addSubview(idealBodyMassIndexLabel)
         view.addSubview(infoButton)
@@ -161,14 +161,14 @@ final class AuthorizationViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
-        calculateBMIButton.snp.makeConstraints { make in
+        updateLabelInfo.snp.makeConstraints { make in
             make.top.equalTo(heightTextField.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
         
         bodyMassIndexLabel.snp.makeConstraints { make in
-            make.top.equalTo(calculateBMIButton.snp.bottom).offset(20)
+            make.top.equalTo(updateLabelInfo.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(16)
         }
         

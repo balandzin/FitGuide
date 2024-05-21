@@ -27,6 +27,7 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Программа тренировок"
         
         tableView = UITableView(frame: view.bounds, style: .plain)
