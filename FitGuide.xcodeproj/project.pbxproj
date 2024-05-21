@@ -20,7 +20,6 @@
 		D3A1783A2BE3C4CC008FCD9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3A178392BE3C4CC008FCD9C /* SnapKit */; };
 		D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */; };
 		D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */; };
-		D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783F2BE5175A008FCD9C /* AppDescription.swift */; };
 		D3A178482BEB8E67008FCD9C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D3A178472BEB87AC008FCD9C /* data.json */; };
 		D3A1784B2BEB8EEF008FCD9C /* Bundle + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */; };
 		D3A178532BEB91A2008FCD9C /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A178522BEB91A2008FCD9C /* Exercises.swift */; };
@@ -47,7 +46,6 @@
 		D37C95962BE3C03100739878 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
-		D3A1783F2BE5175A008FCD9C /* AppDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescription.swift; sourceTree = "<group>"; };
 		D3A178472BEB87AC008FCD9C /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		D3A1784A2BEB8EEF008FCD9C /* Bundle + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + Ex.swift"; sourceTree = "<group>"; };
 		D3A178522BEB91A2008FCD9C /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 		D3A1784D2BEB8F54008FCD9C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D3A1783F2BE5175A008FCD9C /* AppDescription.swift */,
 				D32800552BF6222D006603E4 /* AppConstants.swift */,
 				D3A1785C2BEC2350008FCD9C /* Assets.xcassets */,
 				D3A178472BEB87AC008FCD9C /* data.json */,
@@ -264,7 +261,6 @@
 				D32800502BF6088E006603E4 /* UserExerciseStorage.swift in Sources */,
 				D3A178642BECB683008FCD9C /* CustomButton.swift in Sources */,
 				D32800522BF60F02006603E4 /* RegisterViewController.swift in Sources */,
-				D3A178402BE5175A008FCD9C /* AppDescription.swift in Sources */,
 				D37C957E2BD0118000739878 /* AppDelegate.swift in Sources */,
 				D3A1784B2BEB8EEF008FCD9C /* Bundle + Ex.swift in Sources */,
 				D3A178682BF0C415008FCD9C /* ExercisesData.swift in Sources */,

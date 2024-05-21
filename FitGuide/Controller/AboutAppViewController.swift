@@ -73,7 +73,7 @@ final class AboutAppViewController: UIViewController {
     }
     
     private func setupText() {
-        let description = AppDescription.description
+        let description = AppConstants.description
         
         let attributedString = NSAttributedString(
             string: description,
