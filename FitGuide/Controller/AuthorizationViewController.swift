@@ -107,13 +107,15 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @objc private func calculateBMIButtonTapped() {
+        let bodyMassIndex = user.getBodyMassIndex(height: heightTextField.text, weight: weightTextField.text)
+        
         if !isCorrectData() {
             showAlert(message: AppConstants.incorrectDataMessage)
             
         } else {
             bodyMassIndexLabel.text = """
             \(nameTextField.text ?? ""),  ваш индекс массы тела:
-            \(getBodyMassIndex().0) - \(getBodyMassIndex().1)
+            \(bodyMassIndex.0) - \(bodyMassIndex.1)
             """
             
             if genderSegmentedControl.selectedSegmentIndex == 0 {
@@ -189,30 +191,7 @@ final class AuthorizationViewController: UIViewController {
             
         }
     }
-    
-    private func getBodyMassIndex() -> (Double, String) {
-        var conclusion = ""
-        let height = Double(heightTextField.text ?? "1") ?? 1
-        let weight = Double(weightTextField.text ?? "0") ?? 0
-        
-        
-        let bodyMassIndex = weight / (height * height / 10000)
-        let roundedIndex = round(bodyMassIndex * 10)/10
-        
-        switch bodyMassIndex {
-        case ..<16: conclusion = "Выраженный дефицит массы тела"
-        case 16..<18.5: conclusion = "Недостаточная масса тела (дефицит)"
-        case 18.5..<25: conclusion = "Норма"
-        case 25..<30: conclusion = "Избыточная масса тела (состояние, предшествующее ожирению)"
-        case 30..<35: conclusion = "Ожирение 1-й степени"
-        case 35..<40: conclusion = "Ожирение 2-й степени"
-        default:
-            conclusion = "Ожирение 3-й степени"
-        }
-        
-        return (roundedIndex, conclusion)
-    }
-    
+
     private func showAlert(message: String) {
         let alert = UIAlertController(
             title: title,
