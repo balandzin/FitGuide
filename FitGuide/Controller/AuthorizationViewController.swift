@@ -109,7 +109,11 @@ final class AuthorizationViewController: UIViewController {
     @objc private func calculateBMIButtonTapped() {
         let bodyMassIndex = user.getBodyMassIndex(height: heightTextField.text, weight: weightTextField.text)
         
-        if !isCorrectData() {
+        if !user.isCorrectData(
+            name: nameTextField.text,
+            height: heightTextField.text,
+            weight: weightTextField.text
+        ) {
             showAlert(message: AppConstants.incorrectDataMessage)
             
         } else {
@@ -202,18 +206,5 @@ final class AuthorizationViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
-    }
-    
-    private func isCorrectData() -> Bool {
-        let height = Double(heightTextField.text ?? "1") ?? 1
-        let weight = Double(weightTextField.text ?? "0") ?? 0
-        
-        if nameTextField.text != "" && (
-            100...250
-        ).contains(height) && (20...200).contains(weight) {
-            return true
-        } else {
-            return false
-        }
     }
 }

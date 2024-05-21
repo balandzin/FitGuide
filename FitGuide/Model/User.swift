@@ -34,4 +34,17 @@ class User {
         
         return (roundedIndex, conclusion)
     }
+    
+    func isCorrectData(name: String?, height: String?, weight: String?) -> Bool {
+        let height = Double(height ?? "1") ?? 1
+        let weight = Double(weight ?? "0") ?? 0
+        
+        if name != "" && (
+            100...250
+        ).contains(height) && (20...200).contains(weight) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
