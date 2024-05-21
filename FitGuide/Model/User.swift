@@ -48,6 +48,29 @@ class User {
         }
     }
     
+        func isCorrectData(login: String?, password: String?) -> Bool {
+    
+            let userExerciseStorage = UserExerciseStorage.shared
+            
+            guard let login = login, !login.isEmpty,
+                  let password = password, !password.isEmpty
+                    && userExerciseStorage.checkCredentials(login: login, password: password)
+            else {
+                return false
+            }
+            return true
+        }
+    
+    func isCorrectRegisterData(login: String?, password: String?) -> Bool {
+        
+        guard let login = login, !login.isEmpty,
+              let password = password, !password.isEmpty
+        else {
+            return false
+        }
+        return true
+    }
+    
     func getProgram(login: String, password: String) -> [Exercises] {
         let userExerciseStorage = UserExerciseStorage.shared
         let program = userExerciseStorage.getUserExercises(

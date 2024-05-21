@@ -85,24 +85,13 @@ final class LoginViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    private func isCorrectData() -> Bool {
-        
-        guard let login = loginTextField.text, !login.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty 
-                && userExerciseStorage.checkCredentials(login: login, password: password)
-        else {
-            return false
-        }
-        return true
-    }
-    
     // MARK: - Actions
     @objc private func loginButtonTapped() {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
         if userExerciseStorage.checkCredentials(login: login, password: password)
-            && isCorrectData() {
+            && user.isCorrectData(login: login, password: password) {
             
             user.login = login
             user.password = password

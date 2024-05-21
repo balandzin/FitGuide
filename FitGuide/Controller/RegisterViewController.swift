@@ -72,22 +72,12 @@ final class RegisterViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    private func isCorrectData() -> Bool {
-        
-        guard let login = loginTextField.text, !login.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty
-        else {
-            return false
-        }
-        return true
-    }
-    
     // MARK: - Actions
     @objc private func registerButtonTapped() {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        if isCorrectData() {
+        if user.isCorrectRegisterData(login: login, password: password) {
             if !userExerciseStorage.checkCredentials(
                 login: loginTextField.text ?? "",
                 password: passwordTextField.text ?? ""
