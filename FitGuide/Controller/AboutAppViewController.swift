@@ -13,21 +13,21 @@ final class AboutAppViewController: UIViewController {
     private let telegramLink = AppConstants.telegramLink
     
     // MARK: - GUI Variables
-    private lazy var scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
-    private lazy var contentView = UIView()
+    private let contentView = UIView()
     
-    private lazy var descriptionLabel: UILabel = {
+    private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         return label
     }()
     
-    private lazy var telegramLabel: UILabel = {
+    private let telegramLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         return label

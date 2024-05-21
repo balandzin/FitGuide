@@ -19,7 +19,7 @@ final class LoginViewController: UIViewController {
     
     private let userExerciseStorage = UserExerciseStorage.shared
     
-    private lazy var registerButton: UIButton = {
+    private let registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Register", for: .normal)
         button.setImage(UIImage(systemName: "person.fill"), for: .normal)

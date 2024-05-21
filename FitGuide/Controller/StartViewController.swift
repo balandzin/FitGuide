@@ -11,7 +11,7 @@ import UIKit
 final class StartViewController: UIViewController {
     
     // MARK: - GUI Variables
-    private lazy var startButton: UIButton = {
+    private let startButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
@@ -29,7 +29,7 @@ final class StartViewController: UIViewController {
         return button
     }()
     
-    private lazy var aboutAppButton: UIButton = {
+    private let aboutAppButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("About App", for: .normal)
         button.setImage(UIImage(systemName: "info.circle.fill"), for: .normal)

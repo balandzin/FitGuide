@@ -19,19 +19,19 @@ final class AuthorizationViewController: UIViewController {
     private let heightTextField = CustomTextField(withText: "Enter your height, cm")
     private let calculateBMIButton = CustomButton(withText: "Calculate body mass index")
     
-    private lazy var bodyMassIndexLabel: UILabel = {
+    private let bodyMassIndexLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         return label
     } ()
     
-    private lazy var idealBodyMassIndexLabel: UILabel = {
+    private let idealBodyMassIndexLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         return label
     } ()
     
-    private lazy var infoButton: UIButton = {
+    private let infoButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.blue, for: .normal)
         button.setImage(UIImage(systemName: "info.circle.fill"), for: .normal)
