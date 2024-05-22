@@ -89,7 +89,7 @@ extension ProgramViewController {
             content.text = program[indexPath.section].exercises6
             content.image = UIImage(systemName: "figure.cooldown")
         }
-                
+        
         cell.contentConfiguration = content
         
         return cell

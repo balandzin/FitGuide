@@ -105,3 +105,4 @@ final class AboutAppViewController: UIViewController {
         }
     }
 }
+

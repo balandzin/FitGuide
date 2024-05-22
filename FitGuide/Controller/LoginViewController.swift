@@ -34,7 +34,7 @@ final class LoginViewController: UIViewController {
         setupUI()
         setupButtonTarget()
     }
-
+    
     private func setupUI() {
         view.addSubviews([loginTextField, passwordTextField, loginButton, registerButton])
         

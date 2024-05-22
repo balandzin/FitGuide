@@ -105,7 +105,7 @@ final class AuthorizationViewController: UIViewController {
         view.addSubview(genderSegmentedControl)
         
         view.addVerticalGradientLayer()
-
+        
         setupConstraints()
         
         genderSegmentedControl.selectedSegmentIndex = 0
@@ -200,7 +200,7 @@ final class AuthorizationViewController: UIViewController {
             
         }
     }
-
+    
     private func showAlert(message: String) {
         let alert = UIAlertController(
             title: title,
