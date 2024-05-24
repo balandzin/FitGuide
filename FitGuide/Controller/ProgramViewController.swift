@@ -68,6 +68,7 @@ extension ProgramViewController {
         let program = user.getProgram(login: user.login, password: user.password)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise", for: indexPath)
+        cell.selectionStyle = .none
         var content = cell.defaultContentConfiguration()
         
         if indexPath.row == 0 {
@@ -98,9 +99,5 @@ extension ProgramViewController {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let program = Exercises.getProgram()
         return program[section].day
-    }
-    
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
     }
 }

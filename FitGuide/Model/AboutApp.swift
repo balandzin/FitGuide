@@ -40,11 +40,11 @@ struct AboutApp {
     static let telegramLink = "https://t.me/+375336886070"
     
     static func attributedTextForTelegramLink() -> NSAttributedString {
-            let telegramLinkText = AboutApp.telegramLinkText
-            let attributedString = NSMutableAttributedString(string: telegramLinkText)
-            let linkRange = (telegramLinkText as NSString).range(of: "Telegram")
-            attributedString.addAttribute(.link, value: AboutApp.telegramLink, range: linkRange)
-            return attributedString
-        }
+        let telegramLinkText = AboutApp.telegramLinkText
+        let attributedString = NSMutableAttributedString(string: telegramLinkText)
+        let linkRange = (telegramLinkText as NSString).range(of: "Telegram")
+        attributedString.addAttribute(.link, value: AboutApp.telegramLink, range: linkRange)
+        return attributedString
+    }
     
 }
