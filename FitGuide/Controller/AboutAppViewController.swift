@@ -63,7 +63,7 @@ final class AboutAppViewController: UIViewController {
         }
         contentView.snp.makeConstraints { make in
             make.width.edges.equalToSuperview()
-            make.top.bottom.equalTo(scrollView).inset(70)
+            make.directionalVerticalEdges.equalTo(scrollView).inset(70)
         }
         
         descriptionLabel.snp.makeConstraints { make in
@@ -72,7 +72,7 @@ final class AboutAppViewController: UIViewController {
         
         telegramLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.directionalHorizontalEdges.equalToSuperview().inset(20)
         }
     }
     
