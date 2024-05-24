@@ -13,7 +13,7 @@ struct AppConstants {
     static let idealBodyMassIndexInfo = "Эти диапазоны являются общими рекомендациями. Важно помнить, что ИМТ не учитывает все факторы, такие как процент жира, распределение жировой ткани и мускулатуру, поэтому всегда рекомендуется консультироваться с врачом для более точной оценки состояния здоровья"
     static let idealBodyMassIndexForMale = "Идеальный индекс массы тела для мужчины равен 23"
     static let idealBodyMassIndexForFemale = "Идеальный индекс массы тела для женщины равен 21.5"
-    static let incorrectDataMessage = "Введите корректные данные пользователя"
+    static let incorrectDataMessage = "Enter correct user information"
     static let incorrectLoginOrPassword = "Incorrect login or password"
     static let userExistsMessage = "This user already exists"
 }

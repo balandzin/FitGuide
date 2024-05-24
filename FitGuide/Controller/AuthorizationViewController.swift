@@ -211,5 +211,9 @@ final class AuthorizationViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
+        
+        bodyMassIndexLabel.text = ""
+        idealBodyMassIndexLabel.text = ""
+        infoButton.isHidden = false
     }
 }
