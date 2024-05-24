@@ -46,5 +46,4 @@ struct AboutApp {
         attributedString.addAttribute(.link, value: AboutApp.telegramLink, range: linkRange)
         return attributedString
     }
-    
 }
