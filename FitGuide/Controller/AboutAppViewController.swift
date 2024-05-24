@@ -90,19 +90,13 @@ final class AboutAppViewController: UIViewController {
     }
     
     private func setupLinkAttributesForTelegram() {
-        let telegramLinkText = AboutApp.telegramLinkText
-        let attributedString = NSMutableAttributedString(
-            string: telegramLinkText
-        )
-        let linkRange = attributedString.mutableString.range(of: "Telegram")
-        
-        attributedString.addAttribute(.link, value: telegramLink, range: linkRange)
-        telegramLabel.attributedText = attributedString
-        
-        telegramLabel.isUserInteractionEnabled = true
-        telegramLabel.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(openTelegramLink))
-        )
+        let attributedString = AboutApp.attributedTextForTelegramLink()
+            telegramLabel.attributedText = attributedString
+            
+            telegramLabel.isUserInteractionEnabled = true
+            telegramLabel.addGestureRecognizer(
+                UITapGestureRecognizer(target: self, action: #selector(openTelegramLink))
+            )
     }
     
     @objc func openTelegramLink() {
