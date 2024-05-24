@@ -10,7 +10,7 @@ import UIKit
 final class AboutAppViewController: UIViewController {
     
     // MARK: - Properties
-    private let telegramLink = AppConstants.telegramLink
+    private let telegramLink = AboutApp.telegramLink
     
     // MARK: - GUI Variables
     private let scrollView: UIScrollView = {
@@ -45,7 +45,11 @@ final class AboutAppViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupUI() {
-        view.addSubviews([scrollView, contentView, descriptionLabel, telegramLabel])
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(telegramLabel)
         
         setupConstraints()
         
@@ -73,7 +77,7 @@ final class AboutAppViewController: UIViewController {
     }
     
     private func setupText() {
-        let description = AppConstants.description
+        let description = AboutApp.descriptionText
         
         let attributedString = NSAttributedString(
             string: description,
@@ -86,10 +90,12 @@ final class AboutAppViewController: UIViewController {
     }
     
     private func setupLinkAttributesForTelegram() {
+        let telegramLinkText = AboutApp.telegramLinkText
         let attributedString = NSMutableAttributedString(
-            string: "Нажмите, чтобы связаться с разработчиком в Telegram"
+            string: telegramLinkText
         )
         let linkRange = attributedString.mutableString.range(of: "Telegram")
+        
         attributedString.addAttribute(.link, value: telegramLink, range: linkRange)
         telegramLabel.attributedText = attributedString
         

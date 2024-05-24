@@ -17,6 +17,7 @@
 		D37C958A2BD0118200739878 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D37C95892BD0118200739878 /* Base */; };
 		D37C95922BD1AB8400739878 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C95912BD1AB8400739878 /* StartViewController.swift */; };
 		D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C95962BE3C03100739878 /* AboutAppViewController.swift */; };
+		D38306252C00A19500DD0EA7 /* AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38306242C00A19500DD0EA7 /* AboutApp.swift */; };
 		D3A1783A2BE3C4CC008FCD9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3A178392BE3C4CC008FCD9C /* SnapKit */; };
 		D3A1783C2BE3C868008FCD9C /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */; };
 		D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */; };
@@ -44,6 +45,7 @@
 		D37C958B2BD0118200739878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D37C95912BD1AB8400739878 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D37C95962BE3C03100739878 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		D38306242C00A19500DD0EA7 /* AboutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutApp.swift; sourceTree = "<group>"; };
 		D3A1783B2BE3C868008FCD9C /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		D3A1783D2BE50395008FCD9C /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
 		D3A178472BEB87AC008FCD9C /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		D3A1784C2BEB8F17008FCD9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D38306242C00A19500DD0EA7 /* AboutApp.swift */,
 				D3A178672BF0C415008FCD9C /* ExercisesData.swift */,
 				D3A178522BEB91A2008FCD9C /* Exercises.swift */,
 				D32800582BF776C8006603E4 /* User.swift */,
@@ -256,6 +259,7 @@
 				D37C95922BD1AB8400739878 /* StartViewController.swift in Sources */,
 				D3A1783E2BE50395008FCD9C /* ProgramViewController.swift in Sources */,
 				D3A178592BEB9D35008FCD9C /* UIView + Ex.swift in Sources */,
+				D38306252C00A19500DD0EA7 /* AboutApp.swift in Sources */,
 				D37C95972BE3C03100739878 /* AboutAppViewController.swift in Sources */,
 				D3A178622BEC2BA8008FCD9C /* CustomSegmentedControl.swift in Sources */,
 				D32800502BF6088E006603E4 /* UserExerciseStorage.swift in Sources */,
