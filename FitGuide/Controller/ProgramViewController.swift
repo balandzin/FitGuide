@@ -28,6 +28,16 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+    }
+    
+    // MARK: - Actions
+    @objc private func exitButtonTapped() {
+        navigationController?.setViewControllers([LoginViewController()], animated: true)
+    }
+    
+    // MARK: - Private Methods
+    private func setupUI() {
         title = "Программа тренировок"
         
         tableView = UITableView(frame: view.bounds, style: .plain)
@@ -45,11 +55,6 @@ final class ProgramViewController: UIViewController, UITableViewDataSource, UITa
             action: #selector(exitButtonTapped)
         )
         self.navigationItem.rightBarButtonItem = exitButton
-    }
-    
-    // MARK: - Actions
-    @objc private func exitButtonTapped() {
-        navigationController?.setViewControllers([LoginViewController()], animated: true)
     }
 }
 
