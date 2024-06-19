@@ -36,6 +36,7 @@ struct AboutApp {
             
             Разработчик:
             Баландин Антон Викторович
+            Зинченко Ольга Викторовна
             """
     static let telegramLink = "https://t.me/+375336886070"
     
