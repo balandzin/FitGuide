@@ -45,7 +45,10 @@ final class AboutAppViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupUI() {
-        view.addSubviews([scrollView, contentView, descriptionLabel, telegramLabel])
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(telegramLabel)
         
         setupConstraints()
         
